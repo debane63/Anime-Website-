@@ -1,13 +1,13 @@
-document.getElementById("search").addEventListener("keyup", function() {
+document.getElementById("search").addEventListener("input", function () {
     let searchValue = this.value.toLowerCase();
-    let animes = document.querySelectorAll(".anime");
+    let cards = document.querySelectorAll(".anime-card");
 
-    animes.forEach(anime => {
-        let title = anime.querySelector("h2").innerText.toLowerCase();
+    cards.forEach(card => {
+        let title = card.querySelector("h3").textContent.toLowerCase();
         if (title.includes(searchValue)) {
-            anime.style.display = "block";
+            card.style.display = "block";
         } else {
-            anime.style.display = "none";
+            card.style.display = "none";
         }
     });
 });
